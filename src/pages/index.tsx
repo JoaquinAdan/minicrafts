@@ -25,10 +25,10 @@ export default function Home() {
   const t = locale === 'en' ? en : es
   return (
     <Layout>
-      <Box sx={{ width: '80%' }}>
+      <Box sx={{ width: { xs: '95%', sm: '80%' } }}>
         <Typography
           variant='h4'
-          className='font-extrabold pb-4 text-transparent text-4xl bg-clip-text bg-gradient-to-l from-pink-600 via-purple-500 to-blue-500'
+          className='font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-l from-pink-600 via-purple-500 to-blue-500'
         >
           {t.home.title}
         </Typography>
@@ -41,7 +41,7 @@ export default function Home() {
           <CodeMirror
             value={value}
             editable={false}
-            height='235px'
+            height='240px'
             width='100%'
             theme={xcodeDark}
             extensions={[javascript({ jsx: true })]}

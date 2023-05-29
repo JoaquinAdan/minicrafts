@@ -65,9 +65,6 @@ export default function ResponsiveDrawer(props: Props): JSX.Element {
             >
               <Bars3Icon className="h-6 w-6 text-white" />
             </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              Responsive drawer
-            </Typography>
           </Toolbar>
         </AppBar>
         <Box
@@ -110,7 +107,7 @@ export default function ResponsiveDrawer(props: Props): JSX.Element {
           sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
         >
           {!matches && <Toolbar />}
-          <Box sx={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', pt: '52px' }}>
+          <Box sx={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', pt: {xs: '72px', sm: '52px'} }}>
             {props.children}
           </Box>
         </Box>

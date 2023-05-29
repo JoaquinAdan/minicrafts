@@ -6,6 +6,7 @@ html {
   cursor: url('/sword.png'), auto;
   max-height: 100vh;
 }
+
 *::-webkit-scrollbar {
   background: transparent;
   width: 6px;

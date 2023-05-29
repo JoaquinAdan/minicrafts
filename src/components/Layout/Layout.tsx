@@ -110,9 +110,7 @@ export default function ResponsiveDrawer(props: Props): JSX.Element {
           sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
         >
           {!matches && <Toolbar />}
-          <Box
-            sx={{ minHeight: '100vh', display: 'grid', placeItems: 'center' }}
-          >
+          <Box sx={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', pt: '52px' }}>
             {props.children}
           </Box>
         </Box>

@@ -1,0 +1,13 @@
+{
+  "printWidth": 120,
+  "parser": "flow",
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "bracketSpacing": true,
+  "quoteProps": "as-needed",
+  "arrowParens": "avoid",
+  "useTabs": false,
+  "jsxBracketSameLine": false,
+  "trailingComma": "es5"
+}

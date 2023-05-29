@@ -1,42 +1,37 @@
 'use client';
-import {
-  Box,
-  IconButton,
-  Drawer,
-  AppBar,
-  Toolbar,
-  Typography,
-  CssBaseline,
-} from '@mui/material';
+import { Box,IconButton,Drawer,AppBar,Toolbar,CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import themeCreated from '@/constants/theme';
 import { Bars3Icon } from '@heroicons/react/20/solid';
 import React from 'react';
-import Lists from './Lists';
-import { Inter } from 'next/font/google';
 import useBreakpoint from '@/hook/useBreakpoint';
+import themeCreated from '@/constants/theme';
+import Lists from './Lists';
 
 const drawerWidth = 240;
 interface Props {
   window?: () => Window;
   children: React.ReactNode | React.ReactNode[];
 }
-const inter = Inter({ subsets: ['latin'] });
 
 export default function ResponsiveDrawer(props: Props): JSX.Element {
   const { window } = props;
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
   const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+
   const theme = React.useMemo(() => themeCreated(mode), [mode]);
 
   const toggleTheme = () => {
     localStorage.setItem('themeMode', mode === 'light' ? 'dark' : 'light');
     setMode(mode === 'light' ? 'dark' : 'light');
   };
+
   const matches = useBreakpoint('xs');
+
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+
+  const container = window !== undefined ? () => window().document.body : undefined;
 
   React.useEffect(() => {
     const storage = localStorage.getItem('themeMode');

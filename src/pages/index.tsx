@@ -1,12 +1,8 @@
-import { javascript } from '@codemirror/lang-javascript'
-import { xcodeDark } from '@uiw/codemirror-theme-xcode'
-import CodeMirror from '@uiw/react-codemirror'
 import React from 'react'
 import Layout from '@/components/Layout/Layout'
 import { Box, Typography } from '@mui/material'
-import { useRouter } from 'next/router'
-import es from '../../public/locales/es'
-import en from '../../public/locales/en'
+import VisualCode from '@/components/VisualCode'
+import { getTranslations } from '@/utils/getTranslations'
 
 const value = `  <Layout>
     <div>hola</div>
@@ -20,9 +16,7 @@ const value = `  <Layout>
   </Layout>`
 
 export default function Home() {
-  const router = useRouter()
-  const { locale } = router
-  const t = locale === 'en' ? en : es
+  const t = getTranslations()
   return (
     <Layout>
       <Box sx={{ width: { xs: '95%', sm: '80%' } }}>
@@ -38,14 +32,7 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: t.home.subtitle }}
         />
         <Box>
-          <CodeMirror
-            value={value}
-            editable={false}
-            height='240px'
-            width='100%'
-            theme={xcodeDark}
-            extensions={[javascript({ jsx: true })]}
-          />
+          <VisualCode value={value} />
         </Box>
       </Box>
     </Layout>

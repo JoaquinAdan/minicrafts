@@ -78,16 +78,20 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
       <List>
         {paths.map((nav, index) => (
           <ListItem key={index} sx={{ justifyContent: 'center' }} disablePadding>
-            <Link href={`/mini-app/${nav.path}`}>
-              <ListItemButton>{nav.text}</ListItemButton>
+            <Link style={{ width: '100%' }} href={`/mini-app/${nav.path}`}>
+              <ListItemButton sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                {nav.text}
+              </ListItemButton>
             </Link>
           </ListItem>
         ))}
       </List>
       <Divider />
       <ListItem sx={{ justifyContent: 'center' }} disablePadding>
-        <Link href={`/100-days-of-css/home`}>
-          <ListItemButton>100 days of css</ListItemButton>
+        <Link style={{ width: '100%' }} href={`/100-days-of-css/home`}>
+          <ListItemButton sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            100 days of css
+          </ListItemButton>
         </Link>
       </ListItem>
     </Box>

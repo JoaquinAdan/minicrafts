@@ -4,16 +4,15 @@ import { Box, Typography } from '@mui/material'
 import VisualCode from '@/components/VisualCode'
 import { getTranslations } from '@/utils/getTranslations'
 
-const value = `  <Layout>
-    <div>hola</div>
-    <CodeMirror
-      value="console.log('hello world!');"
-      editable={false}
-      height='200px'
-      theme={xcodeDark}
-      extensions={[javascript({ jsx: true })]}
-    />
-  </Layout>`
+const value = `import { useRouter } from 'next/router'
+import es from '../../public/locales/es'
+import en from '../../public/locales/en'
+
+export const getTranslations = () => {
+  const router = useRouter()
+  const { locale } = router
+  return locale === 'en' ? en : es
+}`
 
 export default function Home() {
   const t = getTranslations()
@@ -28,11 +27,11 @@ export default function Home() {
         </Typography>
         <Typography
           variant='subtitle1'
-          className='pt-4 pb-8 text-lg'
+          className='pt-4 pb-6 text-lg'
           dangerouslySetInnerHTML={{ __html: t.home.subtitle }}
         />
         <Box>
-          <VisualCode value={value} />
+          <VisualCode value={value} height={'auto'} />
         </Box>
       </Box>
     </Layout>

@@ -25,7 +25,7 @@ const themeCreated = (mode: 'light' | 'dark') => {
       },
     },
     typography: {
-      fontFamily: roboto.style.fontFamily,
+      fontFamily: ['arial'].join(','),
     },
   })
 }

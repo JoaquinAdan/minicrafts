@@ -4,13 +4,16 @@ import toast, { Toaster } from 'react-hot-toast'
 import { javascript } from '@codemirror/lang-javascript'
 import CodeMirror from '@uiw/react-codemirror'
 import { Box } from '@mui/material'
+import useBreakpoint from '@/hook/useBreakpoint'
 import React from 'react'
 
 type Props = {
   value: string,
+  height: string,
 }
 
-const VisualCode = ({ value }: Props): JSX.Element => {
+const VisualCode = ({ value, height }: Props): JSX.Element => {
+  const matches = useBreakpoint('sm')
   const copyContent = async () => {
     try {
       await navigator.clipboard.writeText(value)
@@ -24,7 +27,7 @@ const VisualCode = ({ value }: Props): JSX.Element => {
       <CodeMirror
         value={value}
         editable={false}
-        height='240px'
+        height={height}
         width='100%'
         theme={xcodeDark}
         extensions={[javascript({ jsx: true })]}
@@ -34,7 +37,7 @@ const VisualCode = ({ value }: Props): JSX.Element => {
         className='absolute top-2 right-2 border-2 border-white rounded-md flex text-white	px-2 py-1 cursor-pointer'
       >
         <ClipboardDocumentListIcon className='h-6 w-6 text-white' />
-        Copy
+        {matches && 'Copy'}
       </Box>
       <Toaster />
     </Box>

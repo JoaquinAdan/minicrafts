@@ -2,10 +2,10 @@ import React from 'react'
 import { Box, List, ListItem, ListItemButton, Divider, Button, Menu, MenuItem } from '@mui/material'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { paths } from '@/constants/paths'
 import Logo from '@/components/svgs/Logo'
 import { SunIcon, MoonIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
+import { getTranslations } from '@/utils/getTranslations'
 
 type Props = {
   toggleTheme: () => void,
@@ -15,6 +15,12 @@ type Props = {
 const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
 
+  const t = getTranslations()
+
+  const paths = [
+    { text: t.paths.calculator, path: 'calculator' },
+    { text: t.paths.temperature, path: 'temperature' },
+  ]
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => setAnchorEl(event.currentTarget)
 
   const handleClose = () => setAnchorEl(null)
@@ -36,11 +42,11 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
             {mode === 'light' ? <MoonIcon className='h-6 w-6 text-dark' /> : <SunIcon className='h-6 w-6 text-white' />}
           </Button>
           <Button
-            id='basic-button'
             aria-controls={open ? 'basic-menu' : undefined}
             aria-haspopup='true'
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
+            sx={{ color: '#0084de' }}
           >
             {locale === 'en' ? (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
@@ -53,7 +59,6 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
             )}
           </Button>
           <Menu
-            id='basic-menu'
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
@@ -90,7 +95,7 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
       <ListItem sx={{ justifyContent: 'center' }} disablePadding>
         <Link style={{ width: '100%' }} href={`/100-days-of-css/home`}>
           <ListItemButton sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            100 days of css
+            {t.paths.cssDays}
           </ListItemButton>
         </Link>
       </ListItem>

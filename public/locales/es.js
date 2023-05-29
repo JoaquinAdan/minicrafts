@@ -1,4 +1,4 @@
 export default {
-  title: "Hola mundo",
+  title: "Bienvenido a MiniCrafts",
   description: "Este es un ejemplo de proyecto Next.js con i18n",
 }

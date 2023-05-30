@@ -1,8 +1,9 @@
 import React from 'react'
 import Layout from '@/components/Layout/Layout'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Grid } from '@mui/material'
 import VisualCode from '@/components/VisualCode'
 import { getTranslations } from '@/utils/getTranslations'
+import Image from 'next/image'
 
 const value = `import { useRouter } from 'next/router'
 import es from '../../public/locales/es'
@@ -16,6 +17,18 @@ export const getTranslations = () => {
 
 export default function Home() {
   const t = getTranslations()
+
+  const techs = [
+    { src: '/techs/next.png', alt: 'next js logo' },
+    { src: '/techs/react.png', alt: 'react js logo' },
+    { src: '/techs/next.png', alt: 'next js logo' },
+    { src: '/techs/next.png', alt: 'next js logo' },
+    { src: '/techs/next.png', alt: 'next js logo' },
+    { src: '/techs/next.png', alt: 'next js logo' },
+    { src: '/techs/next.png', alt: 'next js logo' },
+    { src: '/techs/next.png', alt: 'next js logo' },
+  ]
+
   return (
     <Layout>
       <Box sx={{ width: { xs: '95%', sm: '80%' } }}>
@@ -33,6 +46,23 @@ export default function Home() {
         <Box>
           <VisualCode value={value} height={'auto'} />
         </Box>
+        <Typography variant='subtitle1' className='py-6 text-lg'>
+          {t.home.techs}
+        </Typography>
+        <Grid container spacing={2}>
+          {techs.map((tech, index) => (
+            <Grid
+              key={index}
+              {...{ xs: 6, md: 4, lg: 3 }}
+              minHeight={160}
+              display='flex'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <Image src={tech.src} alt={tech.alt} width='100' height='100' />
+            </Grid>
+          ))}
+        </Grid>
       </Box>
     </Layout>
   )

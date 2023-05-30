@@ -21,6 +21,7 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
     { text: t.paths.calculator, path: 'calculator' },
     { text: t.paths.temperature, path: 'temperature' },
   ]
+  
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => setAnchorEl(event.currentTarget)
 
   const handleClose = () => setAnchorEl(null)

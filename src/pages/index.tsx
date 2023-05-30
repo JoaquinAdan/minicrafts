@@ -49,20 +49,11 @@ export default function Home() {
         <Typography variant='subtitle1' className='py-6 text-lg'>
           {t.home.techs}
         </Typography>
-        <Grid container spacing={2}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(8,1fr)', placeItems: 'center' }}>
           {techs.map((tech, index) => (
-            <Grid
-              key={index}
-              {...{ xs: 6, md: 4, lg: 3 }}
-              minHeight={160}
-              display='flex'
-              justifyContent='center'
-              alignItems='center'
-            >
-              <Image src={tech.src} alt={tech.alt} width='100' height='100' />
-            </Grid>
+            <Image key={index} src={tech.src} alt={tech.alt} width='50' height='50' />
           ))}
-        </Grid>
+        </Box>
       </Box>
     </Layout>
   )

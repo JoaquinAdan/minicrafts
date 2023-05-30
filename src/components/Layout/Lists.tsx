@@ -1,11 +1,11 @@
-import React from 'react'
-import { Box, List, ListItem, ListItemButton, Divider, Button, Menu, MenuItem, Typography } from '@mui/material'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import Logo from '@/components/svgs/Logo'
 import { SunIcon, MoonIcon } from '@heroicons/react/20/solid'
+import { Box, List, ListItem, ListItemButton, Divider, Button, Menu, MenuItem, Typography } from '@mui/material'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 import { getTranslations } from '@/utils/getTranslations'
+import LogoIcon from '@/components/svgs/LogoIcon'
 
 type Props = {
   toggleTheme: () => void,
@@ -21,7 +21,7 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
     { text: t.paths.calculator, path: 'calculator' },
     { text: t.paths.temperature, path: 'temperature' },
   ]
-  
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => setAnchorEl(event.currentTarget)
 
   const handleClose = () => setAnchorEl(null)
@@ -36,7 +36,7 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <ListItemButton sx={{ display: 'flex', flexDirection: 'column' }}>
         <Link href={`/`}>
-          <Logo />
+          <LogoIcon />
         </Link>
         <Box>
           <Button onClick={toggleTheme}>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, List, ListItem, ListItemButton, Divider, Button, Menu, MenuItem } from '@mui/material'
+import { Box, List, ListItem, ListItemButton, Divider, Button, Menu, MenuItem, Typography } from '@mui/material'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from '@/components/svgs/Logo'
@@ -41,20 +41,16 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
           <Button onClick={toggleTheme}>
             {mode === 'light' ? <MoonIcon className='h-6 w-6 text-dark' /> : <SunIcon className='h-6 w-6 text-white' />}
           </Button>
-          <Button
-            aria-controls={open ? 'basic-menu' : undefined}
-            aria-haspopup='true'
-            aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
-            sx={{ color: '#0084de' }}
-          >
+          <Button onClick={handleClick}>
             {locale === 'en' ? (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                <Image src='/en.png' alt='united states flag' width='20' height='20' /> English
+                <Image src='/en.png' alt='united states flag' width='20' height='20' />
+                <Typography>English</Typography>
               </Box>
             ) : (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                <Image src='/es.png' alt='bandera española' width='20' height='20' /> Español
+                <Image src='/es.png' alt='bandera española' width='20' height='20' />
+                <Typography>Español</Typography>
               </Box>
             )}
           </Button>

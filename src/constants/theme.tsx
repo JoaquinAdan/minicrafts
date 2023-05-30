@@ -14,18 +14,32 @@ const themeCreated = (mode: 'light' | 'dark') => {
   return createTheme({
     palette: {
       mode: mode,
-      primary: {
-        main: '#556cd6',
-      },
-      secondary: {
-        main: '#19857b',
-      },
-      error: {
-        main: red.A400,
-      },
+      ...(mode === 'light'
+        ? {
+            primary: {
+              main: '#0084de',
+            },
+            secondary: {
+              main: '#db2777',
+            },
+            error: {
+              main: red.A400,
+            },
+          }
+        : {
+            primary: {
+              main: '#FFFFFF',
+            },
+            secondary: {
+              main: '#db2777',
+            },
+            error: {
+              main: red.A400,
+            },
+          }),
     },
     typography: {
-      fontFamily: ['arial'].join(','),
+      fontFamily: roboto.style.fontFamily,
     },
   })
 }

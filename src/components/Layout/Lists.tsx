@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { useTranslations } from '@/hook/useTranslation'
+import useTranslations from '@/hook/useTranslation'
 
 type Props = {
   toggleTheme: () => void,

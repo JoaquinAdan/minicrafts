@@ -5,6 +5,7 @@ import { javascript } from '@codemirror/lang-javascript'
 import CodeMirror from '@uiw/react-codemirror'
 import { Box } from '@mui/material'
 import useBreakpoint from '@/hook/useBreakpoint'
+import useTranslations from '@/hook/useTranslation'
 import React from 'react'
 
 type Props = {
@@ -13,13 +14,14 @@ type Props = {
 }
 
 const VisualCode = ({ value, height }: Props): JSX.Element => {
+  const t = useTranslations()
   const matches = useBreakpoint('sm')
   const copyContent = async () => {
     try {
       await navigator.clipboard.writeText(value)
-      ;(() => toast.success('Codigo copiado correctamente pa'))()
+      ;(() => toast.success(t.toast.copySuccess))()
     } catch (err) {
-      ;(() => toast.error('Hubo un error pibe'))()
+      ;(() => toast.error(t.toast.copyError))()
     }
   }
   return (

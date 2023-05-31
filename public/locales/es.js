@@ -11,4 +11,8 @@ export default {
     techs:
       'Las tecnologias y librerias que se iran utilizando en esta web las ire actualizando y dejare un enlace a cada una de ellas para que puedas ver su documentacion y aprender mas sobre ellas. PD: Algunos de los siguientes iconos estan creados por mi en Adobe Illustrator 😋',
   },
+  toast: {
+    copySuccess: 'Copiado al portapapeles',
+    copyError: 'Error al copiar',
+  }
 }

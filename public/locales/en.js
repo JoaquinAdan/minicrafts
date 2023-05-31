@@ -11,4 +11,8 @@ export default {
     techs:
       'The technologies and libraries that will be used in this web will be updated and I will leave a link to each of them so you can see their documentation and learn more about them. PS: Some of the following icons are created by me in Adobe Illustrator 😋',
   },
+  toast: {
+    copySuccess: 'Copied to clipboard',
+    copyError: 'Error copying',
+  },
 }

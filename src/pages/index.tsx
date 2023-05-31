@@ -1,11 +1,13 @@
 import React from 'react'
 import { Box, Typography, Grid } from '@mui/material'
 import VisualCode from '@/components/VisualCode'
-import { useTranslations } from '@/hook/useTranslation'
+import useTranslations from '@/hook/useTranslation'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTheme } from '@mui/material'
 
-const value = `import { useRouter } from 'next/router'
+const value = `import { useMemo } from 'react'
+import { useRouter } from 'next/router'
 import es from '../../public/locales/es'
 import en from '../../public/locales/en'
 
@@ -13,11 +15,15 @@ interface Translations {
   [key: string]: any;
 }
 
-export const useTranslations = (): Translations => {
+export default function useTranslations(): Translations {
   const router = useRouter()
   const { locale } = router
-  return locale === 'en' ? en : es
-}`
+  const translations = useMemo(() => {
+    return locale === 'en' ? en : es
+  }, [locale])
+  return translations
+}
+`
 
 export default function Home() {
   const t = useTranslations()
@@ -68,19 +74,27 @@ export default function Home() {
             item
             xs={2}
             md={4}
-            sx={{
-              borderColor: theme.palette.primary.main,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
+            sx={{ borderColor: theme.palette.primary.main, height: '100%' }}
             className='border-2 py-4 px-1 w-28 rounded-md'
           >
-            <Image src={tech.src} alt={tech.alt} width={50} height={50} />
-            <Typography variant='subtitle1' sx={{ fontSize: '1.125rem' }}>
-              {tech.alt}
-            </Typography>
+            <Box
+              component={Link}
+              sx={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              href='https://twitter.com/'
+              passHref
+            >
+              <Image src={tech.src} alt={tech.alt} width={50} height={50} />
+              <Typography variant='subtitle1' sx={{ fontSize: '1.125rem' }}>
+                {tech.alt}
+              </Typography>
+            </Box>
           </Grid>
         ))}
       </Grid>

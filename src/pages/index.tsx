@@ -89,20 +89,7 @@ export default function Home() {
           </Grid>
         ))}
       </Grid>
-      <Typography
-        variant='subtitle1'
-        sx={{
-          fontSize: '1.125rem',
-          py: '1.5rem',
-          display: 'block',
-          margin: '2em auto',
-          padding: '.3em 2em',
-          border: 'none',
-          borderRadius: '5px',
-          '-webkitborder-radius': '5px',
-          outline: 'none',
-        }}
-      >
+      <Typography variant='subtitle1' sx={{ fontSize: '1.125rem', py: '1.5rem' }}>
         {t.home.aboutMe}{' '}
         {socials.map((social, index) => (
           <SvgLink key={index} href={social.href} src={social.src} alt={social.alt} title={social.title} />

@@ -22,7 +22,6 @@ export const useTranslations = (): Translations => {
 export default function Home() {
   const t = useTranslations()
   const theme = useTheme()
-  console.log(theme.palette.primary.main)
   const techs = [
     { src: '/svg/nextIcon.svg', alt: 'Next js' },
     { src: '/svg/reactIcon.svg', alt: 'React js' },
@@ -60,12 +59,13 @@ export default function Home() {
       </Typography>
       <Grid
         container
-        columns={{ xs: 4.1, sm: 12, md: 16, lg: 24, xl: 34 }}
+        columns={{ xs: 4.1, sm: 8, md: 16, lg: 24, xl: 34 }}
         sx={{ gap: { xs: '5px', md: '10px' }, display: 'flex', justifyContent: 'center' }}
       >
         {techs.map((tech, index) => (
           <Grid
             key={index}
+            item
             xs={2}
             md={4}
             sx={{

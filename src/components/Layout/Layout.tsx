@@ -1,4 +1,3 @@
-'use client'
 import { Box, IconButton, Drawer, AppBar, Toolbar } from '@mui/material'
 import { Bars3Icon } from '@heroicons/react/20/solid'
 import React from 'react'

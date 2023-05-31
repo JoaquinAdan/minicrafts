@@ -1,10 +1,12 @@
-import React from 'react'
-import { Box, Typography, Grid } from '@mui/material'
-import VisualCode from '@/components/VisualCode'
-import useTranslations from '@/hook/useTranslation'
+import { Box, Typography, Grid, Tooltip, Zoom, useTheme } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTheme } from '@mui/material'
+import React from 'react'
+import useTranslations from '@/hook/useTranslation'
+import VisualCode from '@/components/VisualCode'
+import { techs } from '@/constants/techs'
+import { socials } from '@/constants/socials'
+import SvgLink from '@/components/SvgLink'
 
 const value = `import { useMemo } from 'react'
 import { useRouter } from 'next/router'
@@ -18,9 +20,11 @@ interface Translations {
 export default function useTranslations(): Translations {
   const router = useRouter()
   const { locale } = router
+
   const translations = useMemo(() => {
     return locale === 'en' ? en : es
   }, [locale])
+
   return translations
 }
 `
@@ -28,20 +32,6 @@ export default function useTranslations(): Translations {
 export default function Home() {
   const t = useTranslations()
   const theme = useTheme()
-  const techs = [
-    { src: '/svg/nextIcon.svg', alt: 'Next js' },
-    { src: '/svg/reactIcon.svg', alt: 'React js' },
-    { src: '/svg/typescriptIcon.svg', alt: 'TypeScript' },
-    { src: '/svg/javascriptIcon.svg', alt: 'JavaScript' },
-    { src: '/svg/tailwindIcon.svg', alt: 'Tailwind' },
-    { src: '/svg/muiIcon.svg', alt: 'MUI' },
-    { src: '/svg/codeMirrorIcon.svg', alt: 'Code Mirror' },
-    { src: '/svg/heroIcon.svg', alt: 'HeroIcon' },
-    { src: '/svg/prettierIcon.svg', alt: 'Prettier' },
-    { src: '/svg/gitIcon.svg', alt: 'Git' },
-    { src: '/svg/githubIcon.svg', alt: 'Github' },
-    { src: '/svg/vercelIcon.svg', alt: 'Vercel' },
-  ]
 
   return (
     <Box sx={{ width: { xs: '95%', sm: '80%' } }}>
@@ -60,7 +50,7 @@ export default function Home() {
       <Box>
         <VisualCode value={value} height={'auto'} />
       </Box>
-      <Typography variant='subtitle1' fontSize='1.125rem' sx={{ fontSize: '1.125rem', py: '1.5rem' }}>
+      <Typography variant='subtitle1' sx={{ fontSize: '1.125rem', py: '1.5rem' }}>
         {t.home.techs}
       </Typography>
       <Grid
@@ -87,8 +77,9 @@ export default function Home() {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}
-              href='https://twitter.com/'
-              passHref
+              href={tech.documentation}
+              target='_blank'
+              rel='nofollow noopener noreferrer'
             >
               <Image src={tech.src} alt={tech.alt} width={50} height={50} />
               <Typography variant='subtitle1' sx={{ fontSize: '1.125rem' }}>
@@ -98,6 +89,25 @@ export default function Home() {
           </Grid>
         ))}
       </Grid>
+      <Typography
+        variant='subtitle1'
+        sx={{
+          fontSize: '1.125rem',
+          py: '1.5rem',
+          display: 'block',
+          margin: '2em auto',
+          padding: '.3em 2em',
+          border: 'none',
+          borderRadius: '5px',
+          '-webkitborder-radius': '5px',
+          outline: 'none',
+        }}
+      >
+        {t.home.aboutMe}{' '}
+        {socials.map((social, index) => (
+          <SvgLink key={index} href={social.href} src={social.src} alt={social.alt} title={social.title} />
+        ))}
+      </Typography>
     </Box>
   )
 }

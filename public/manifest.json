@@ -6,7 +6,7 @@
     "start_url": "/",
     "name": "MiniCrafts",
     "description": "Mini programming projects",
-    "short_name": "Minicrafts",
+    "short_name": "MiniCrafts",
     "icons": [
         {
             "src": "/icon-192x192.png",

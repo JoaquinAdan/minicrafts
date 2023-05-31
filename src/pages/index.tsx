@@ -40,13 +40,18 @@ export default function Home() {
   return (
     <Box sx={{ width: { xs: '95%', sm: '80%' } }}>
       <Typography
-        className='font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-pink-600 via-purple-500 to-blue-500'
+        className='text-transparent bg-clip-text bg-gradient-to-l from-pink-600 via-purple-500 to-blue-500'
         variant='h4'
-        sx={{ fontWeight: 'bold' }}
+        fontWeight='bold'
       >
         {t.home.title}
       </Typography>
-      <Typography variant='h6' className='pt-4 pb-6 text-lg' dangerouslySetInnerHTML={{ __html: t.home.subtitle }} />
+      <Typography
+        variant='subtitle1'
+        fontSize='1.125rem'
+        className='pt-4 pb-6 text-lg'
+        dangerouslySetInnerHTML={{ __html: t.home.subtitle }}
+      />
       <Box>
         <VisualCode value={value} height={'auto'} />
       </Box>

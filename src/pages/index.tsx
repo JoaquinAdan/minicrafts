@@ -34,6 +34,7 @@ export default function Home() {
     { src: '/svg/prettierIcon.svg', alt: 'Prettier' },
     { src: '/svg/gitIcon.svg', alt: 'Git' },
     { src: '/svg/githubIcon.svg', alt: 'Github' },
+    { src: '/svg/vercelIcon.svg', alt: 'Vercel' },
   ]
 
   return (
@@ -47,14 +48,13 @@ export default function Home() {
       </Typography>
       <Typography
         variant='subtitle1'
-        fontSize='1.125rem'
-        className='pt-4 pb-6 text-lg'
+        sx={{ fontSize: '1.125rem', pt: '1rem', pb: '1.5rem' }}
         dangerouslySetInnerHTML={{ __html: t.home.subtitle }}
       />
       <Box>
         <VisualCode value={value} height={'auto'} />
       </Box>
-      <Typography variant='subtitle1' fontSize='1.125rem' className='py-6 text-lg'>
+      <Typography variant='subtitle1' fontSize='1.125rem' sx={{ fontSize: '1.125rem', py: '1.5rem' }}>
         {t.home.techs}
       </Typography>
       <Grid
@@ -78,7 +78,7 @@ export default function Home() {
             className='border-2 py-4 px-1 w-28 rounded-md'
           >
             <Image src={tech.src} alt={tech.alt} width={50} height={50} />
-            <Typography variant='subtitle1' className='text-lg'>
+            <Typography variant='subtitle1' sx={{ fontSize: '1.125rem' }}>
               {tech.alt}
             </Typography>
           </Grid>

@@ -42,7 +42,7 @@ export default function Home() {
       <Typography
         className='text-transparent bg-clip-text bg-gradient-to-l from-pink-600 via-purple-500 to-blue-500'
         variant='h4'
-        fontWeight='bold'
+        sx={{ fontWeight: 'bold', fontSize: '2rem' }}
       >
         {t.home.title}
       </Typography>

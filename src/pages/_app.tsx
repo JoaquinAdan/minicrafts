@@ -1,9 +1,10 @@
-import type { AppProps } from 'next/app'
 import { ThemeProvider } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
+import {useState, useMemo, useEffect} from 'react'
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import themeCreated from '@/constants/theme'
 import Layout from '@/components/Layout/Layout'
-import {useState, useMemo, useEffect} from 'react'
 import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -21,11 +22,16 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Layout mode={mode} toggleTheme={toggleTheme}>
-      <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Layout mode={mode} toggleTheme={toggleTheme}>
+        <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </>
   )
 }

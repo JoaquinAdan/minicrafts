@@ -94,7 +94,7 @@ export default function Layout(props: Props): JSX.Element {
           <Lists toggleTheme={props.toggleTheme} mode={props.mode} />
         </Drawer>
       </Box>
-      <Box component='main' sx={{ flexGrow: 1, width: { md: `calc(100% - ${drawerWidth}px)` } }}>
+      <Box component='main' sx={{ flexGrow: 1, width: { md: `calc(100% - ${drawerWidth}px)` }, maxWidth: '100vw' }}>
         {!matches && <Toolbar />}
         <Box sx={{ minHeight: '90vh', display: 'flex', justifyContent: 'center', py: { xs: '10vh', md: '5vh' } }}>
           {props.children}

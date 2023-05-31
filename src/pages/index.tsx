@@ -41,7 +41,7 @@ export default function Home() {
     <Box sx={{ width: { xs: '95%', sm: '80%' } }}>
       <Typography
         variant='h4'
-        className='font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-l from-pink-600 via-purple-500 to-blue-500'
+        className='font-extrabold text-transparent text-4xl !important bg-clip-text bg-gradient-to-l from-pink-600 via-purple-500 to-blue-500'
       >
         {t.home.title}
       </Typography>

@@ -62,8 +62,14 @@ export default function Home() {
             key={index}
             xs={2}
             md={4}
-            sx={{ borderColor: theme.palette.primary.main }}
-            className='border-2 flex flex-col items-center justify-center columns py-4 px-1 w-28 rounded-md'
+            sx={{
+              borderColor: theme.palette.primary.main,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+            className='border-2 py-4 px-1 w-28 rounded-md'
           >
             <Image src={tech.src} alt={tech.alt} width={50} height={50} />
             <Typography variant='subtitle1' className='text-lg'>

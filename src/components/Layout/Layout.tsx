@@ -29,8 +29,8 @@ export default function Layout(props: Props): JSX.Element {
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     const touch = event.touches[0]
     const differenceX = touch.clientX - startX
-    const isMovingRight = differenceX > 50
-    setMobileOpen(isMovingRight)
+    const imdovingRight = differenceX > 50
+    setMobileOpen(imdovingRight)
   }
 
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen)
@@ -47,9 +47,9 @@ export default function Layout(props: Props): JSX.Element {
       <AppBar
         position='fixed'
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-          display: { xs: 'block', sm: 'none' },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          ml: { md: `${drawerWidth}px` },
+          display: { xs: 'block', md: 'none' },
         }}
       >
         <Toolbar>
@@ -58,13 +58,13 @@ export default function Layout(props: Props): JSX.Element {
             aria-label='open drawer'
             edge='start'
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { md: 'none' } }}
           >
             <Bars3Icon className='h-6 w-6 text-white' />
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Box component='nav' sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }} aria-label='mailbox folders'>
+      <Box component='nav' sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }} aria-label='mailbox folders'>
         <Drawer
           container={container}
           variant='temporary'
@@ -72,7 +72,7 @@ export default function Layout(props: Props): JSX.Element {
           onClose={handleDrawerToggle}
           ModalProps={{ keepMounted: true }} // Better open performance on mobile.
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', md: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -84,7 +84,7 @@ export default function Layout(props: Props): JSX.Element {
         <Drawer
           variant='permanent'
           sx={{
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', md: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -95,9 +95,9 @@ export default function Layout(props: Props): JSX.Element {
           <Lists toggleTheme={props.toggleTheme} mode={props.mode} />
         </Drawer>
       </Box>
-      <Box component='main' sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
+      <Box component='main' sx={{ flexGrow: 1, width: { md: `calc(100% - ${drawerWidth}px)` } }}>
         {!matches && <Toolbar />}
-        <Box sx={{ minHeight: '90vh', display: 'flex', justifyContent: 'center', py: { xs: '10vh', sm: '5vh' } }}>
+        <Box sx={{ minHeight: '90vh', display: 'flex', justifyContent: 'center', py: { xs: '10vh', md: '5vh' } }}>
           {props.children}
         </Box>
       </Box>

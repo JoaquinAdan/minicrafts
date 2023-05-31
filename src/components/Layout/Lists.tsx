@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { getTranslations } from '@/utils/getTranslations'
-import LogoIcon from '@/components/svgs/LogoIcon'
+import { LogoIcon } from '@/components/svgs/svgStorage'
 
 type Props = {
   toggleTheme: () => void,
@@ -23,8 +23,6 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
   ]
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => setAnchorEl(event.currentTarget)
-
-  const handleClose = () => setAnchorEl(null)
 
   const router = useRouter()
 
@@ -58,18 +56,16 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
           <Menu
             anchorEl={anchorEl}
             open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
+            onClose={() => setAnchorEl(null)}
+            MenuListProps={{ 'aria-labelledby': 'basic-button' }}
           >
             <Link href={asPath} locale='es'>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={() => setAnchorEl(null)}>
                 <Image src='/es.png' alt='bandera española' width='20' height='20' /> Español
               </MenuItem>
             </Link>
             <Link href={asPath} locale='en'>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={() => setAnchorEl(null)}>
                 <Image src='/en.png' alt='united states flag' width='20' height='20' /> English
               </MenuItem>
             </Link>

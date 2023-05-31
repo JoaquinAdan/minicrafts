@@ -2,8 +2,19 @@ import React from 'react'
 import { Box, Typography, Grid } from '@mui/material'
 import VisualCode from '@/components/VisualCode'
 import { getTranslations } from '@/utils/getTranslations'
-import NextIcon from '@/components/svgs/NextIcon'
-import ReactIcon from '@/components/svgs/ReactIcon'
+import {
+  CodeMirrorIcon,
+  TypescriptIcon,
+  JavscriptIcon,
+  PrettierIcon,
+  TailwindIcon,
+  GithubIcon,
+  ReactIcon,
+  NextIcon,
+  HeroIcon,
+  MuiIcon,
+  GitIcon,
+} from '@/components/svgs/svgStorage'
 import { useTheme } from '@mui/material'
 
 const value = `import { useRouter } from 'next/router'
@@ -21,15 +32,17 @@ export default function Home() {
   const theme = useTheme()
   console.log(theme.palette.primary.main)
   const techs = [
-    { Icon: <ReactIcon color={theme.palette.primary.main} />, alt: 'react js' },
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'next js' },
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'next js' },
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'next js' },
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'next js' },
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'next js' },
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'next js' },
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'next js' },
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'next js' },
+    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'Next js' },
+    { Icon: <ReactIcon color={theme.palette.primary.main} />, alt: 'React js' },
+    { Icon: <TypescriptIcon color={theme.palette.primary.main} />, alt: 'TypeScript' },
+    { Icon: <JavscriptIcon color={theme.palette.primary.main} />, alt: 'JavaScript' },
+    { Icon: <TailwindIcon color={theme.palette.primary.main} />, alt: 'Tailwind' },
+    { Icon: <MuiIcon color={theme.palette.primary.main} />, alt: 'MUI' },
+    { Icon: <CodeMirrorIcon color={theme.palette.primary.main} />, alt: 'Code Mirror' },
+    { Icon: <HeroIcon color={theme.palette.primary.main} />, alt: 'HeroIcon' },
+    { Icon: <PrettierIcon color={theme.palette.primary.main} />, alt: 'Prettier' },
+    { Icon: <GitIcon color={theme.palette.primary.main} />, alt: 'Git' },
+    { Icon: <GithubIcon color={theme.palette.primary.main} />, alt: 'Github' },
   ]
 
   return (
@@ -53,16 +66,16 @@ export default function Home() {
       </Typography>
       <Grid
         container
-        columns={{ xs: 4.1, sm: 12, md: 16, lg: 24, xl: 32 }}
+        columns={{ xs: 4.1, sm: 12, md: 16, lg: 24, xl: 34 }}
         sx={{ gap: { xs: '5px', md: '10px' }, display: 'flex', justifyContent: 'center' }}
       >
         {techs.map((tech, index) => (
           <Grid
             key={index}
             xs={2}
-            sm={4}
             md={4}
-            className='border-blue-400 border-2 flex flex-col items-center justify-center columns py-4 px-1 w-28 rounded-md'
+            sx={{ borderColor: theme.palette.primary.main }}
+            className='border-2 flex flex-col items-center justify-center columns py-4 px-1 w-28 rounded-md'
           >
             {tech.Icon}
             <Typography variant='subtitle1' className='text-lg'>

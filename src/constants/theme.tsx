@@ -1,6 +1,15 @@
+import { Roboto } from 'next/font/google'
 import { createTheme } from '@mui/material/styles'
 import { red } from '@mui/material/colors'
 
+export const roboto = Roboto({
+  weight: ['300', '400', '500', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Helvetica', 'Arial', 'sans-serif'],
+})
+
+// Create a theme instance.
 const themeCreated = (mode: 'light' | 'dark') => {
   return createTheme({
     palette: {
@@ -30,7 +39,7 @@ const themeCreated = (mode: 'light' | 'dark') => {
           }),
     },
     typography: {
-      fontFamily: ['monospace'].join(','),
+      fontFamily: roboto.style.fontFamily,
     },
   })
 }

@@ -11,7 +11,7 @@ export default {
     techs:
       'The technologies and libraries that will be used in this web will be updated and I will leave a link to each of them so you can see their documentation and learn more about them. PS: Some of the following icons are created by me in Adobe Illustrator 😋',
     aboutMe:
-      'You can visit my social networks to recommend me more MiniCrafts, contact me, see more of my projects or just say hello 😄.',
+      'You can visit my social networks to recommend me more MiniCrafts to do, contact me, see more of my projects or just say hello 😄.',
   },
   toast: {
     copySuccess: 'Copied to clipboard',

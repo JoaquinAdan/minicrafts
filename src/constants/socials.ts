@@ -11,7 +11,12 @@ export const socials = [
     alt: 'linkedin',
     title: 'linkedIn @Joaquin Rodriguez',
   },
-  { href: 'https://github.com/JoaquinAdan', src: 'svg/githubIcon.svg', alt: 'github', title: 'github @JoaquinAdan' },
+  {
+    href: 'https://github.com/JoaquinAdan',
+    src: 'svg/githubContainIcon.svg',
+    alt: 'github',
+    title: 'github @JoaquinAdan',
+  },
   {
     href: 'https://twitter.com/Joadev24?t=Jk3IViSJKyIbWmI3OgoH9g&s=09',
     src: 'svg/twitterIcon.svg',

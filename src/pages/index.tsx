@@ -1,20 +1,8 @@
 import React from 'react'
 import { Box, Typography, Grid } from '@mui/material'
 import VisualCode from '@/components/VisualCode'
-import { getTranslations } from '@/utils/getTranslations'
-import {
-  CodeMirrorIcon,
-  TypescriptIcon,
-  JavscriptIcon,
-  PrettierIcon,
-  TailwindIcon,
-  GithubIcon,
-  ReactIcon,
-  NextIcon,
-  HeroIcon,
-  MuiIcon,
-  GitIcon,
-} from '@/components/svgs/svgStorage'
+import { useTranslations } from '@/hook/useTranslation'
+import Image from 'next/image'
 import { useTheme } from '@mui/material'
 
 const value = `import { useRouter } from 'next/router'
@@ -28,21 +16,21 @@ export const getTranslations = () => {
 }`
 
 export default function Home() {
-  const t = getTranslations()
+  const t = useTranslations()
   const theme = useTheme()
   console.log(theme.palette.primary.main)
   const techs = [
-    { Icon: <NextIcon color={theme.palette.primary.main} />, alt: 'Next js' },
-    { Icon: <ReactIcon color={theme.palette.primary.main} />, alt: 'React js' },
-    { Icon: <TypescriptIcon color={theme.palette.primary.main} />, alt: 'TypeScript' },
-    { Icon: <JavscriptIcon color={theme.palette.primary.main} />, alt: 'JavaScript' },
-    { Icon: <TailwindIcon color={theme.palette.primary.main} />, alt: 'Tailwind' },
-    { Icon: <MuiIcon color={theme.palette.primary.main} />, alt: 'MUI' },
-    { Icon: <CodeMirrorIcon color={theme.palette.primary.main} />, alt: 'Code Mirror' },
-    { Icon: <HeroIcon color={theme.palette.primary.main} />, alt: 'HeroIcon' },
-    { Icon: <PrettierIcon color={theme.palette.primary.main} />, alt: 'Prettier' },
-    { Icon: <GitIcon color={theme.palette.primary.main} />, alt: 'Git' },
-    { Icon: <GithubIcon color={theme.palette.primary.main} />, alt: 'Github' },
+    { src: '/svg/nextIcon.svg', alt: 'Next js' },
+    { src: '/svg/reactIcon.svg', alt: 'React js' },
+    { src: '/svg/typescriptIcon.svg', alt: 'TypeScript' },
+    { src: '/svg/javascriptIcon.svg', alt: 'JavaScript' },
+    { src: '/svg/tailwindIcon.svg', alt: 'Tailwind' },
+    { src: '/svg/muiIcon.svg', alt: 'MUI' },
+    { src: '/svg/codeMirrorIcon.svg', alt: 'Code Mirror' },
+    { src: '/svg/heroIcon.svg', alt: 'HeroIcon' },
+    { src: '/svg/prettierIcon.svg', alt: 'Prettier' },
+    { src: '/svg/gitIcon.svg', alt: 'Git' },
+    { src: '/svg/githubIcon.svg', alt: 'Github' },
   ]
 
   return (
@@ -77,7 +65,7 @@ export default function Home() {
             sx={{ borderColor: theme.palette.primary.main }}
             className='border-2 flex flex-col items-center justify-center columns py-4 px-1 w-28 rounded-md'
           >
-            {tech.Icon}
+            <Image src={tech.src} alt={tech.alt} width={50} height={50} />
             <Typography variant='subtitle1' className='text-lg'>
               {tech.alt}
             </Typography>

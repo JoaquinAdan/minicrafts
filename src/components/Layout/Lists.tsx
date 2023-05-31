@@ -4,8 +4,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { getTranslations } from '@/utils/getTranslations'
-import { LogoIcon } from '@/components/svgs/svgStorage'
+import { useTranslations } from '@/hook/useTranslation'
 
 type Props = {
   toggleTheme: () => void,
@@ -15,7 +14,7 @@ type Props = {
 const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
 
-  const t = getTranslations()
+  const t = useTranslations()
 
   const paths = [
     { text: t.paths.calculator, path: 'calculator' },
@@ -34,7 +33,7 @@ const Lists = ({ toggleTheme, mode }: Props): JSX.Element => {
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <ListItemButton sx={{ display: 'flex', flexDirection: 'column' }}>
         <Link href={`/`}>
-          <LogoIcon />
+          <Image src='/svg/logoIcon.svg' alt={'Logo de la aplicacion'} width={150} height={40} />
         </Link>
         <Box>
           <Button onClick={toggleTheme}>

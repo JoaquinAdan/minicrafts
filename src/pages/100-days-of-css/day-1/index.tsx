@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from '@mui/material'
 import Link from 'next/link'
 
-const dayOne = () => {
+const DayOne = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <Link href='/100-days-of-css/home'>
@@ -13,4 +13,4 @@ const dayOne = () => {
   )
 }
 
-export default dayOne
+export default DayOne

@@ -3,7 +3,7 @@ import { CssBaseline } from '@mui/material'
 import {useState, useMemo, useEffect} from 'react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import themeCreated from '@/constants/theme'
+import themeCreated from '@/styles/theme'
 import Layout from '@/components/Layout/Layout'
 import '@/styles/globals.css'
 

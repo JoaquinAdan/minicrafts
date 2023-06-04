@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Tooltip, Zoom, useTheme } from '@mui/material'
+import { Box, Typography, Grid, useTheme } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -7,27 +7,6 @@ import VisualCode from '@/components/VisualCode'
 import { techs } from '@/constants/techs'
 import { socials } from '@/constants/socials'
 import SvgLink from '@/components/SvgLink'
-
-const value = `import { useMemo } from 'react'
-import { useRouter } from 'next/router'
-import es from '../../public/locales/es'
-import en from '../../public/locales/en'
-
-interface Translations {
-  [key: string]: any;
-}
-
-export default function useTranslations(): Translations {
-  const router = useRouter()
-  const { locale } = router
-
-  const translations = useMemo(() => {
-    return locale === 'en' ? en : es
-  }, [locale])
-
-  return translations
-}
-`
 
 export default function Home() {
   const t = useTranslations()
@@ -98,3 +77,24 @@ export default function Home() {
     </Box>
   )
 }
+
+const value = `import { useMemo } from 'react'
+import { useRouter } from 'next/router'
+import es from '../../public/locales/es'
+import en from '../../public/locales/en'
+
+interface Translations {
+  [key: string]: any;
+}
+
+export default function useTranslations(): Translations {
+  const router = useRouter()
+  const { locale } = router
+
+  const translations = useMemo(() => {
+    return locale === 'en' ? en : es
+  }, [locale])
+
+  return translations
+}
+`

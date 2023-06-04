@@ -68,6 +68,40 @@ export default function Home() {
           </Grid>
         ))}
       </Grid>
+      <Box sx={{ pt: '1.5rem' }}>
+        <Typography variant='subtitle1' sx={{ fontSize: '1.125rem' }}>
+          {t.home.pwa}
+        </Typography>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' } }}>
+          <Box
+            sx={{
+              borderColor: theme.palette.primary.main,
+              maxWidth: { xs: '100%', md: '392px' },
+              m: '1.5rem auto 0 auto',
+            }}
+            className='border-2 py-2 px-4 rounded-md'
+          >
+            <Typography variant='subtitle1' sx={{ fontSize: '1.425rem', color: theme.palette.primary.main }}>
+              {t.home.desktop}
+            </Typography>
+            <Image src='/desktopExample.png' alt='PWA' width={392} height={254} />
+          </Box>
+
+          <Box
+            sx={{
+              borderColor: theme.palette.primary.main,
+              maxWidth: { xs: '100%', md: '392px' },
+              m: '1.5rem auto 0 auto',
+            }}
+            className='border-2 py-2 px-4 rounded-md'
+          >
+            <Typography variant='subtitle1' sx={{ fontSize: '1.425rem', color: theme.palette.primary.main }}>
+              {t.home.mobile}
+            </Typography>
+            <Image src='/mobileExample.jpg' alt='PWA' width={392} height={254} />
+          </Box>
+        </Box>
+      </Box>
       <Typography variant='subtitle1' sx={{ fontSize: '1.125rem', py: '1.5rem' }}>
         {t.home.aboutMe}{' '}
         {socials.map((social, index) => (

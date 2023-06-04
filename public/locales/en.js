@@ -16,6 +16,9 @@ export default {
       'The technologies and libraries that will be used in this web will be updated and I will leave a link to each of them so you can see their documentation and learn more about them. PS: Some of the following icons are created by me in Adobe Illustrator 😋.',
     aboutMe:
       'You can visit my social networks to recommend me more MiniCrafts to do, contact me, see more of my projects or just say hello 😄.',
+    pwa: 'Feel free to download this website! It is a PWA, you can install it to use it as a native app on any device. To install it, just click on the install button that appears somewhere in your browser. I give you 2 simple instructions in Chrome for mobile and Chrome for desktop pc: In mobile you must press the 3 dots that appear on the right and select the option shown in the image and in desktop PC you must press the symbol of a screen with a download arrow shown in the image.',
+    desktop: 'Desktop PC',
+    mobile: 'mobile',
   },
   toast: {
     copySuccess: 'Copied to clipboard',

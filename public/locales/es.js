@@ -17,6 +17,9 @@ export default {
       'Las tecnologias y librerias que se iran utilizando en esta web las ire actualizando y dejare un enlace a cada una de ellas para que puedas ver su documentacion y aprender mas sobre ellas. PD: Algunos de los siguientes iconos estan creados por mi en Adobe Illustrator 😋.',
     aboutMe:
       'Puedes visitar mis redes sociales para recomendar mas MiniCrafts para hacer, contactarte, ver mas de mis proyectos o simplemente saludar 😄.',
+    pwa: '¡Sientete libre de descargar esta web! Es una PWA, puedes instalarla para usarla como una app nativa en cualquier dispositivos. Para instalarla, solo debes dar clic en el botón de instalar que aparece en alguna parte de tu navegador. Te doy 2 instrucciones sencillas en Chrome de celular y Chrome para pc de escritorio: En celular debes apretar los 3 puntitos que te aparecen a la derecha y seleccionar la opción que se muestra en la imagen y en PC de escritorio debes apretar el símbolo de una pantalla con un flecha de descarga que se muestra en la imagen',
+    desktop: 'PC de escritorio',
+    mobile: 'Celular',
   },
   toast: {
     copySuccess: 'Copiado al portapapeles',

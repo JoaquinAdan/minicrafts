@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Tooltip, Zoom, useTheme } from '@mui/material'
+import { Box, Typography, Grid, useTheme } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -7,27 +7,6 @@ import VisualCode from '@/components/VisualCode'
 import { techs } from '@/constants/techs'
 import { socials } from '@/constants/socials'
 import SvgLink from '@/components/SvgLink'
-
-const value = `import { useMemo } from 'react'
-import { useRouter } from 'next/router'
-import es from '../../public/locales/es'
-import en from '../../public/locales/en'
-
-interface Translations {
-  [key: string]: any;
-}
-
-export default function useTranslations(): Translations {
-  const router = useRouter()
-  const { locale } = router
-
-  const translations = useMemo(() => {
-    return locale === 'en' ? en : es
-  }, [locale])
-
-  return translations
-}
-`
 
 export default function Home() {
   const t = useTranslations()
@@ -89,6 +68,40 @@ export default function Home() {
           </Grid>
         ))}
       </Grid>
+      <Box sx={{ pt: '1.5rem' }}>
+        <Typography variant='subtitle1' sx={{ fontSize: '1.125rem' }}>
+          {t.home.pwa}
+        </Typography>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' } }}>
+          <Box
+            sx={{
+              borderColor: theme.palette.primary.main,
+              maxWidth: { xs: '100%', md: '392px' },
+              m: '1.5rem auto 0 auto',
+            }}
+            className='border-2 py-2 px-4 rounded-md'
+          >
+            <Typography variant='subtitle1' sx={{ fontSize: '1.425rem', color: theme.palette.primary.main }}>
+              {t.home.desktop}
+            </Typography>
+            <Image src='/desktopExample.png' alt='PWA' width={392} height={254} />
+          </Box>
+
+          <Box
+            sx={{
+              borderColor: theme.palette.primary.main,
+              maxWidth: { xs: '100%', md: '392px' },
+              m: '1.5rem auto 0 auto',
+            }}
+            className='border-2 py-2 px-4 rounded-md'
+          >
+            <Typography variant='subtitle1' sx={{ fontSize: '1.425rem', color: theme.palette.primary.main }}>
+              {t.home.mobile}
+            </Typography>
+            <Image src='/mobileExample.jpg' alt='PWA' width={392} height={254} />
+          </Box>
+        </Box>
+      </Box>
       <Typography variant='subtitle1' sx={{ fontSize: '1.125rem', py: '1.5rem' }}>
         {t.home.aboutMe}{' '}
         {socials.map((social, index) => (
@@ -98,3 +111,24 @@ export default function Home() {
     </Box>
   )
 }
+
+const value = `import { useMemo } from 'react'
+import { useRouter } from 'next/router'
+import es from '../../public/locales/es'
+import en from '../../public/locales/en'
+
+interface Translations {
+  [key: string]: any;
+}
+
+export default function useTranslations(): Translations {
+  const router = useRouter()
+  const { locale } = router
+
+  const translations = useMemo(() => {
+    return locale === 'en' ? en : es
+  }, [locale])
+
+  return translations
+}
+`

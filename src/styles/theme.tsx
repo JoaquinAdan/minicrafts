@@ -25,6 +25,20 @@ const themeCreated = (mode: 'light' | 'dark') => {
             error: {
               main: red.A400,
             },
+            components: {
+              MuiButton: {
+                styleOverrides: {
+                  contained: {
+                    backgroundColor: '#ed1b1c',
+                  },
+                  root: {
+                    color: '#0084de',
+                    textTransform: 'none',
+                    //fontSize: "18px",
+                  },
+                },
+              },
+            },
           }
         : {
             primary: {

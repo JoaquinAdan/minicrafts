@@ -1,23 +1,15 @@
-import { ArrowLeftIcon } from '@heroicons/react/20/solid'
-import { Box, Button } from '@mui/material'
-import Link from 'next/link'
+import WorkInProgress from '@/components/WorkInProgress'
+import CssLayout from '@/components/cssLayout'
+import { Box } from '@mui/material'
 import React from 'react'
-interface Props {
-  mode: 'light' | 'dark';
-}
 
-const DayOne = (props: Props) => {
-  console.log(props.mode)
+const DayOne = (): JSX.Element => {
   return (
-    <Box sx={{ width: { xs: '95%', sm: '80%' } }}>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <ArrowLeftIcon className='h-6 w-6 text-white' />
-        <Link href='/100-days-of-css/home'>
-          <Button>home</Button>
-        </Link>
-        <div style={{ height: '300px', width: '300px', background: 'red' }} />
-      </div>
-    </Box>
+    <CssLayout>
+      <Box sx={{ width: '100%', height: '100%', display: 'grid', placeItems: 'center' }}>
+        <WorkInProgress />
+      </Box>
+    </CssLayout>
   )
 }
 

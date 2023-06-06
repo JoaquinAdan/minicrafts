@@ -1,5 +1,5 @@
 import WorkInProgress from '@/components/WorkInProgress'
-import CssLayout from '@/components/cssLayout'
+import CssLayout from '@/components/CssLayout'
 import { Box } from '@mui/material'
 import React from 'react'
 

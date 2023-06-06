@@ -19,6 +19,7 @@ const WorkInProgress = (): JSX.Element => {
           transform: 'translate(-50%, -50%)',
           textAlign: 'center',
           color: '#000',
+          width: '100%'
         }}
       >
         {t.workInProgress}

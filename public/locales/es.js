@@ -2,10 +2,11 @@ export default {
   paths: {
     calculator: 'Calculadora',
     temperature: 'Temperatura',
-    cssDays: '100 dias de css',
+    cssDays: '100 dias de CSS',
   },
+  workInProgress: 'Trabajo en progreso',
   daysOfCss: {
-    title: '100 dias de css',
+    title: '100 dias de CSS',
     subtitle:
       'En este apartado veras un reto que no prometo cumplirlo dia tras dia, quizas algun dia hago varios, quizas un dia no hago ninguno, pero si prometo que en algun momento terminara (Este subtitulo cambiara cuando lo termine). Este reto proviene de la pagina <a target="_blank" rel="noopener" href="https://100dayscss.com/" style="color: #0084de; text-decoration: underline;">100 dias de css</a>, pueden visitar su sitio web para obtener mas información.',
   },

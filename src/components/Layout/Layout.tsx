@@ -1,7 +1,10 @@
 import { Box, IconButton, Drawer, AppBar, Toolbar } from '@mui/material'
+import { ArrowLeftIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 import React from 'react'
 import useBreakpoint from '@/hook/useBreakpoint'
+import { useRouter } from 'next/router'
 import Lists from './Lists'
 
 const drawerWidth = 240
@@ -13,6 +16,7 @@ interface Props {
 }
 
 export default function Layout(props: Props): JSX.Element {
+  const router = useRouter()
   const { window } = props
 
   const [mobileOpen, setMobileOpen] = React.useState(false)
@@ -51,16 +55,23 @@ export default function Layout(props: Props): JSX.Element {
           display: { xs: 'block', md: 'none' },
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
           <IconButton
             color='inherit'
             aria-label='open drawer'
             edge='start'
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: 'none' } }}
+            sx={{ display: { md: 'none' } }}
           >
             <Bars3Icon className='h-6 w-6 text-white' />
           </IconButton>
+          {router.asPath.includes('day-') && (
+            <Link href='/100-days-of-css/home'>
+              <IconButton sx={{ display: { md: 'none' } }}>
+                <ArrowLeftIcon className='h-6 w-6 text-white' />
+              </IconButton>
+            </Link>
+          )}
         </Toolbar>
       </AppBar>
       <Box component='nav' sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }} aria-label='mailbox folders'>

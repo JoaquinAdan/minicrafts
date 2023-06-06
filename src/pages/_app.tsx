@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
-import {useState, useMemo, useEffect} from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import themeCreated from '@/styles/theme'

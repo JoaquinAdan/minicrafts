@@ -9,6 +9,7 @@ export default {
     title: '100 dias de CSS',
     subtitle:
       'En este apartado veras un reto que no prometo cumplirlo dia tras dia, quizas algun dia hago varios, quizas un dia no hago ninguno, pero si prometo que en algun momento terminara (Este subtitulo cambiara cuando lo termine). Este reto proviene de la pagina <a target="_blank" rel="noopener" href="https://100dayscss.com/" style="color: #0084de; text-decoration: underline;">100 dias de css</a>, pueden visitar su sitio web para obtener mas información.',
+      one: 'Día 1: <a target="_blank" rel="noopener" href="https://100dayscss.com/days/1/" style="color: #0084de; text-decoration: underline;">100 dias de css</a>',
   },
   home: {
     title: 'Bienvenido a MiniCrafts',

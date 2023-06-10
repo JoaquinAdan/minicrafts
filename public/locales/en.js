@@ -8,6 +8,7 @@ export default {
   daysOfCss: {
     title: '100 days of CSS',
     subtitle: `In this section you will see a challenge that I don't promise to do day after day, maybe one day I will do several, maybe one day I won't do any, but I promise that at some point it will end (This subtitle will change when I finish it).. This challenge comes from the page <a target="_blank" rel="noopener" href="https://100dayscss.com/" style="color: #0084de; text-decoration: underline;">100 days of css</a>, you can visit their website for more information.`,
+    one: 'Day 1: <a target="_blank" rel="noopener" href="https://100dayscss.com/days/1/" style="color: #0084de; text-decoration: underline;">100 days of css</a>',
   },
   home: {
     title: 'Welcome to MiniCrafts',
